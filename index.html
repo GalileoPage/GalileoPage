@@ -8,7 +8,7 @@
         body, html {
             margin: 0;
             padding: 0;
-            font-family: "Gill Sans", sans-serif;
+            font-family: Arial, sans-serif;
             scroll-behavior: smooth; /* Smooth scrolling */
         }
         /* Navbar styling */
@@ -31,7 +31,7 @@
             margin: 0 10px;
         }
         .navbar a:hover {
-            background-color: white;
+            background-color: #ddd;
             color: black;
         }
         /* Section styling */
@@ -48,31 +48,50 @@
             background-color: #f0f0f0;
         }
         #about {
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
         }
         #contact {
-            background-color: #d0d0d0;
+            background-color: #f0f0f0;
         }
-        /* Email form styling */
-        form {
-            margin: 20px;
+        /* Styling for the form container */
+        .email-subscription {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
         }
-        input[type="email"] {
-            padding: 10px;
-            margin-right: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+        .email-subscription form {
+            display: flex;
+            align-items: center;
+            border: 2px solid #4CAF50; /* Border color matching button */
+            border-radius: 50px; /* Larger border radius for unified look */
+            overflow: hidden; /* Ensure rounded corners are applied */
+            padding: 0; /* Remove padding */
+            width: 400px;
         }
-        button {
-            padding: 10px 20px;
+        .rounded-input {
             border: none;
+            padding: 20px 30px; /* Increased padding for larger input */
+            outline: none;
+            border-radius: 50px 0 0 50px; /* Rounded corners only on the left side */
+            font-size: 18px;
+            flex-grow: 1;
+        }
+        .rounded-button {
+            border: none;
+            padding: 20px 30px; /* Increased padding for larger button */
             background-color: #4CAF50;
             color: white;
-            border-radius: 4px;
+            border-radius: 0 50px 50px 0; /* Rounded corners only on the right side */
             cursor: pointer;
+            font-size: 18px;
         }
-        button:hover {
-            background-color: black;
+        .rounded-button:hover {
+            background-color: #45a049; /* Hover effect */
+        }
+        .rounded-input::placeholder {
+            color: #aaa;
+            font-size: 16px; /* Slightly larger placeholder font */
         }
         footer {
             padding: 20px;
@@ -85,15 +104,23 @@
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#home">Home</a>
+        <a href="#home">Our Mission</a>
         <a href="#about">About Us</a>
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Home Section -->
+    <!-- Home Section with Form -->
     <section id="home">
         <h1>Welcome to Our Startup</h1>
-        <p>This is the homepage of your startup website. Here you can introduce your business, your services, and showcase your offerings.</p>
+        <p>We provide innovative solutions to help you accelerate your creative process.</p>
+
+        <!-- Email Subscription Form Moved to Home Section -->
+        <div class="email-subscription">
+            <form action="https://formspree.io/f/xjkvbbek" method="POST">
+                <input type="email" name="email" placeholder="Sign up for our Newsletter" required class="rounded-input">
+                <button type="submit" class="rounded-button">Sign up</button>
+            </form>
+        </div>
     </section>
 
     <!-- About Us Section -->
@@ -106,12 +133,6 @@
     <section id="contact">
         <h1>Contact Us</h1>
         <p>If you'd like to reach out, please email us at <a href="mailto:contact@yourstartup.com">contact@yourstartup.com</a> or call us at (123) 456-7890.</p>
-        
-        <!-- Email Subscription Section -->
-        <form action="https://formspree.io/f/xjkvbbek" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Submit</button>
-        </form>
     </section>
 
     <!-- Footer -->
