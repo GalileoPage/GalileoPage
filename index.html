@@ -33,25 +33,56 @@
             margin: 0 10px;
         }
         .navbar a:hover {
-            background-color: #ddd;
+            background-color: white;
             color: black;
         }
         .content {
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+        form {
+            margin: 20px;
+        }
+        input[type="email"] {
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
 
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">Our Mission</a>
+        <a href="about.html">Team</a>
+        <a href="contact.html">Contact Us</a>
     </div>
 
     <div class="content">
         <h1>Welcome to Our Startup</h1>
-        <p>This is the homepage of your startup website. Here you can introduce your business, your services, and showcase your offerings.</p>
+        <p>This is the homepage of the startup website. Here can introduce business, services, and showcase offerings.</p>
+
+        <h2>Subscribe to our Newsletter</h2>
+        <form action="https://formspree.io/f/xjkvbbek" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
 </body>
