@@ -93,6 +93,36 @@
             color: #aaa;
             font-size: 16px; /* Slightly larger placeholder font */
         }
+
+        /* Card Styling */
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .card h3 {
+            margin: 20px 0 10px 0;
+        }
+        .card p {
+            padding: 0 20px 20px 20px;
+        }
+        
+        /* Footer Styling */
         footer {
             padding: 20px;
             text-align: center;
@@ -111,7 +141,7 @@
 
     <!-- Home Section with Form -->
     <section id="home">
-        <h1>Welcome to Our Startup</h1>
+        <h1>Welcome to Innov.AI</h1>
         <p>We provide innovative solutions to help you accelerate your creative process.</p>
 
         <!-- Email Subscription Form Moved to Home Section -->
@@ -126,18 +156,41 @@
     <!-- About Us Section -->
     <section id="about">
         <h1>About Us</h1>
-        <p>This page is dedicated to providing more information about our startup, our mission, our team, and the unique value we bring to the market.</p>
+        <p></p>
+
+        <!-- Cards Section -->
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="./mk.jpg" alt="Mayank Kejriwal">
+                <h3>Mayank Kejriwal</h3>
+                <p>CEO <br/><br/> Research Assistant Professor, Department of Industrial & Systems Engineering, USC <br />
+                    Ph.D. in Computer Science, University of Texas at Austin (2016)</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="./jason.jpg" alt="Zhisheng Tang">
+                <h3>Zhisheng Tang</h3>
+                <p>CTO <br/><br/> Ph.D. Student in Industrial & Systems Engineering, USC</p>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h1>Contact Us</h1>
-        <p>If you'd like to reach out, please email us at <a href="mailto:contact@yourstartup.com">contact@yourstartup.com</a> or call us at (123) 456-7890.</p>
+        <p></p>
+        <div class="email-subscription"></div>
+            <form action="https://formspree.io/f/xjkvbbek" method="POST">
+                <input type="email" name="email" placeholder="Sign up for our Newsletter" required class="rounded-input">
+                <button type="submit" class="rounded-button">Sign up</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Your Startup Name. All Rights Reserved</p>
+        <p>© 2024 Innov.AI. All Rights Reserved</p>
     </footer>
 </body>
 </html>
