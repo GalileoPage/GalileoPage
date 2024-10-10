@@ -21,7 +21,7 @@
         }
         /* Navbar styling */
         .navbar {
-            background-color: #333;
+            background-color: #00aaee;
             overflow: hidden;
             position: fixed;
             top: 0;
@@ -39,13 +39,14 @@
             margin: 0 10px;
         }
         .navbar a:hover {
-            background-color: #ddd;
+            background-color: #89d4f2;
             color: black;
         }
         /* Section styling */
         section {
             padding: 60px 20px;
-            height: 100vh; /* Full height for each section */
+            min-height: 100vh;
+            /* height: 100vh; Full height for each section */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -76,7 +77,7 @@
             border-radius: 50px; /* Larger border radius for unified look */
             overflow: hidden; /* Ensure rounded corners are applied */
             padding: 0; /* Remove padding */
-            width: 30%; /* Responsive width */
+            width: 100%; /* Responsive width */
             max-width: 600px; /* Maximum width to avoid stretching on large screens */
             flex-direction: row; /* Default to row layout */
         }
@@ -117,7 +118,8 @@
             background-color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             margin: 20px;
             text-align: center;
             overflow: hidden;
