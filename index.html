@@ -1,47 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innov.AI</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body, html {
+        body,
+        html {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling */
-            box-sizing: border-box; /* Include padding and border in element's width/height */
+            scroll-behavior: smooth;
+            /* Smooth scrolling */
+            box-sizing: border-box;
+            /* Include padding and border in element's width/height */
         }
-        *, *::before, *::after {
-            box-sizing: inherit; /* Inherit box-sizing for all elements */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+            /* Inherit box-sizing for all elements */
         }
-        h1, h2, h3 {
-            font-weight: 600; /* Use a bolder weight for headers */
+
+        h1,
+        h2,
+        h3 {
+            font-weight: 600;
+            /* Use a bolder weight for headers */
         }
+
         /* Navbar styling */
         .navbar {
-            background-color: #00aaee;
+            background-color: #007BFF;
             overflow: hidden;
             position: fixed;
             top: 0;
             width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
+            padding: 5px 20px;
             z-index: 1000;
         }
-        .navbar a {
-            display: block;
+
+        .navbar .brand-logo {
+            position: absolute;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .nav-links a {
             color: white;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            margin: 0 10px;
+            transition: background-color 0.3s, border-radius 0.3s;
         }
-        .navbar a:hover {
+
+        .navbar .nav-links a:hover {
             background-color: #89d4f2;
             color: black;
+            border-radius: 20px;
+            padding: 14px 20px;
         }
+
         /* Section styling */
         section {
             padding: 60px 20px;
@@ -53,58 +86,79 @@
             align-items: center;
             text-align: center;
         }
+
         #home {
             background-color: #f0f0f0;
         }
+
         #about {
             background-color: #f0f0f0;
         }
+
         #contact {
             background-color: #f0f0f0;
         }
+
         /* Styling for the form container */
         .email-subscription {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 30px;
             width: 100%;
+            margin-bottom: 30px;
         }
+
         .email-subscription form {
             display: flex;
             align-items: center;
             /* border: 2px solid #4CAF50; Border color matching button */
-            border-radius: 50px; /* Larger border radius for unified look */
-            overflow: hidden; /* Ensure rounded corners are applied */
-            padding: 0; /* Remove padding */
-            width: 100%; /* Responsive width */
-            max-width: 600px; /* Maximum width to avoid stretching on large screens */
-            flex-direction: row; /* Default to row layout */
+            border-radius: 50px;
+            /* Larger border radius for unified look */
+            overflow: hidden;
+            /* Ensure rounded corners are applied */
+            padding: 0;
+            /* Remove padding */
+            width: 100%;
+            /* Responsive width */
+            max-width: 600px;
+            /* Maximum width to avoid stretching on large screens */
+            flex-direction: row;
+            /* Default to row layout */
         }
+
         .rounded-input {
             border: none;
-            padding: 20px 30px; /* Increased padding for larger input */
+            padding: 20px 30px;
+            /* Increased padding for larger input */
             outline: none;
             /* border-radius: 50px 0 0 50px; Rounded corners only on the left side */
             font-size: 18px;
             flex-grow: 1;
-            min-width: 0; /* Prevent input overflow */
+            min-width: 0;
+            /* Prevent input overflow */
         }
+
         .rounded-button {
             border: none;
-            padding: 20px 30px; /* Increased padding for larger button */
+            padding: 20px 30px;
+            /* Increased padding for larger button */
             background-color: #4CAF50;
             color: white;
             /* border-radius: 0 50px 50px 0; Rounded corners only on the right side */
             cursor: pointer;
             font-size: 18px;
         }
+
         .rounded-button:hover {
-            background-color: #45a049; /* Hover effect */
+            background-color: #45a049;
+            /* Hover effect */
         }
+
         .rounded-input::placeholder {
             color: #aaa;
-            font-size: 16px; /* Slightly larger placeholder font */
+            font-size: 16px;
+            /* Slightly larger placeholder font */
         }
 
         /* Card Styling */
@@ -114,6 +168,7 @@
             flex-wrap: wrap;
             margin-top: 30px;
         }
+
         .card {
             background-color: #ffffff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -124,18 +179,21 @@
             text-align: center;
             overflow: hidden;
         }
+
         .card img {
             width: 100%;
             height: 300px;
             object-fit: cover;
         }
+
         .card h3 {
             margin: 20px 0 10px 0;
         }
+
         .card p {
             padding: 0 20px 20px 20px;
         }
-        
+
         /* Footer Styling */
         footer {
             padding: 20px;
@@ -144,48 +202,241 @@
             color: white;
         }
 
+        .content-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        .content-column {
+            flex: 1;
+            min-width: 250px;
+            max-width: 330px;
+            margin: 30px 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .content-column h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #007BFF;
+            margin-bottom: 15px;
+        }
+
+        .content-column ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .content-column li {
+            margin-bottom: 15px;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .content-column li strong {
+            color: #000;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-column {
+                max-width: 90%;
+                margin: 10px 0;
+            }
+        }
+
+        #pain-points {
+            margin-top: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #pain-points .intro-text {
+            margin-bottom: 20px;
+        }
+
+        .pain-points-list p {
+            font-size: 1.2rem;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+
+        .main-title {
+            font-size: 4rem;
+            /* Adjust this value for the desired size */
+            font-weight: 600;
+            /* Make it bold */
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .sub-title {
+            font-size: 2.5rem;
+            /* Slightly smaller than the main title */
+            font-weight: 500;
+            color: #333;
+            /* A different color to highlight it */
+            margin-bottom: 30px;
+        }
+
+        .grail-title {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #007BFF;
+            margin-top: 20px;
+        }
+
+        .highlight {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+
+        .grail-info {
+            font-size: 1.8rem;
+            /* Adjust size as needed */
+            font-weight: 100;
+            text-align: center;
+            margin: 30px 150px;
+            color: #333;
+            /* Adjust color as needed */
+        }
+
+        .highlight-word {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .blue-letter {
+            color: #007BFF;
+        }
+
         /* Media queries for responsiveness */
         @media only screen and (max-width: 768px) {
             .email-subscription form {
-                flex-direction: column; /* Stack input and button vertically */
-                width: 100%; /* Full width for smaller screens */
-                max-width: 100%; /* Remove maximum width limit */
+                flex-direction: column;
+                /* Stack input and button vertically */
+                width: 100%;
+                /* Full width for smaller screens */
+                max-width: 100%;
+                /* Remove maximum width limit */
             }
 
             .rounded-input {
-                border-radius: 50px; /* Make input fully rounded */
-                width: 100%; /* Full width for smaller screens */
-                margin: 5px 0; /* Margin between elements */
+                border-radius: 50px;
+                /* Make input fully rounded */
+                width: 100%;
+                /* Full width for smaller screens */
+                margin: 5px 0;
+                /* Margin between elements */
             }
 
             .rounded-button {
-                border-radius: 50px; /* Make button fully rounded */
-                width: 100%; /* Full width for smaller screens */
-                margin: 5px 0; /* Margin between elements */
+                border-radius: 50px;
+                /* Make button fully rounded */
+                width: 100%;
+                /* Full width for smaller screens */
+                margin: 5px 0;
+                /* Margin between elements */
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#home">Our Mission</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="brand-logo">Innov.AI</a>
+        <div class="nav-links">
+            <a href="#home">Our Mission</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
     </div>
 
     <!-- Home Section with Form -->
     <section id="home">
-        <h1>Welcome to Innov.AI</h1>
-        <p>We provide innovative solutions to help you accelerate your creative process.</p>
+        <h1 class="main-title">
+            <span class="blue-letter">G</span>rant-writing
+            <span class="blue-letter">R</span>esearch
+            <span class="blue-letter">A</span>ssistant with
+            <span class="blue-letter">I</span>ntelligent
+            <span class="blue-letter">L</span>inkage
+        </h1>
+        <h1 class="grail-title"> <span class="highlight">GRAIL</span></h1>
 
-        <!-- Email Subscription Form Moved to Home Section -->
+        <div id="pain-points">
+            <!-- <div class="intro-text">
+                <h2>Common Challenges in Grant Writing</h2>
+            </div> -->
+            <div class="pain-points-list">
+                <p>Overwhelmed by tighter regulations and fierce competition? 😟</p>
+                <p>Struggling to manage and reuse your best proposal ideas? 🤯</p>
+                <p>Drowning in administrative complexities of large, multi-entity collaborations? 🏢</p>
+            </div>
+        </div>
+
         <div class="email-subscription">
             <form action="https://formspree.io/f/xjkvbbek" method="POST">
-                <input type="email" name="email" placeholder="Sign up for our Newsletter" required class="rounded-input">
+                <input type="email" name="email" placeholder="Sign up for our Newsletter" required
+                    class="rounded-input">
                 <button type="submit" class="rounded-button">Sign up</button>
             </form>
         </div>
+
+        <div class="grail-info"> <span class="highlight-word">GRAIL</span> is an <span class="highlight-word">AI
+                copilot</span> that treats researchers
+            applying for federal grants and contracts
+            as <span class="highlight-word">first-class
+                citizens</span>. Backed by <span class="highlight-word">cutting-edge generative AI</span> methods
+            developed by our team and a killer interface, GRAIL will
+            make it a breeze to apply for complex grants and federal contracts
+        </div>
+
+        <div class="content-container">
+            <div class="content-column">
+                <h2>Productivity Boost</h2>
+                <ul>
+                    <li> An AI copilot streamlines the grant-writing process, improving speed and success rates.</li>
+                </ul>
+            </div>
+            <div class="content-column">
+                <h2>Overhead Reduction</h2>
+                <ul>
+                    <li>Centralized platforms ease asset management and enhance efficiency.</li>
+                </ul>
+            </div>
+            <div class="content-column">
+                <h2>Seamless Integration</h2>
+                <ul>
+                    <li>Unified tools for project management, writing, and collaboration foster greater synergy.</li>
+                </ul>
+            </div>
+        </div>
+
     </section>
 
     <!-- About Us Section -->
@@ -199,14 +450,17 @@
             <div class="card">
                 <img src="./mk.jpg" alt="Mayank Kejriwal">
                 <h3>Mayank Kejriwal</h3>
-                <p>CEO <br/><br/> Research Assistant Professor, Department of Industrial & Systems Engineering, USC <br />
-                    Ph.D. in Computer Science, University of Texas at Austin (2016)</p>
+                <p>Chief Executive Officer <br /><br /> Research Assistant Professor, Department of Industrial & Systems
+                    Engineering, USC
+                    <br />
+                    Ph.D. in Computer Science, University of Texas at Austin (2016)
+                </p>
             </div>
             <!-- Card 2 -->
             <div class="card">
                 <img src="./jason.jpg" alt="Zhisheng Tang">
                 <h3>Zhisheng Tang</h3>
-                <p>CTO <br/><br/> Ph.D. Student in Industrial & Systems Engineering, USC</p>
+                <p>Chief Technology Officer <br /><br /> Ph.D. Student in Industrial & Systems Engineering, USC</p>
             </div>
         </div>
     </section>
@@ -214,11 +468,19 @@
     <!-- Contact Section -->
     <section id="contact">
         <h1>Contact Us</h1>
-        <p></p>
+        <!-- <p>For inquiries or to learn more about our services, feel free to reach out to us:</p> -->
+
+        <!-- <p>Innov.AI Headquarters</p> -->
+        <p>Information Sciences Institute<br>
+            USC Viterbi School of Engineering<br>
+            4676 Admiralty Way, Suite 1001<br>
+            Marina Del Rey, CA 90292, USA
+        </p>
 
         <div class="email-subscription">
             <form action="https://formspree.io/f/xjkvbbek" method="POST">
-                <input type="email" name="email" placeholder="Sign up for our Newsletter" required class="rounded-input">
+                <input type="email" name="email" placeholder="Sign up for our Newsletter" required
+                    class="rounded-input">
                 <button type="submit" class="rounded-button">Sign up</button>
             </form>
         </div>
@@ -229,4 +491,5 @@
         <p>© 2024 Innov.AI. All Rights Reserved</p>
     </footer>
 </body>
+
 </html>
